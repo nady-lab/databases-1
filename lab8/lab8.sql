@@ -43,10 +43,10 @@ USING (club_id)
 JOIN players
 USING (player_id)
 WHERE EXISTS (
-  SELECT club_id
+  SELECT 1
   FROM player_contracts
-  WHERE club_id = club_id
-  AND wage >= 50000
+  WHERE player_contracts.club_id = clubs.club_id
+  AND player_contracts.wage >= 50000
 )
 ORDER BY wage DESC;
 
