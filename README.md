@@ -1,19 +1,14 @@
-# databases 1
+# <img src="assets/folder.png" width="32" alt=""> databases 1
 
-SQL labs from my first databases module at TU Dublin, written for PostgreSQL. it starts with designing a food delivery app from scratch and moves on to a football players database that i query with joins and set operations.
+SQL labs from my databases module at TU Dublin, written for PostgreSQL. it starts with a food delivery app to get the basics down and moves on to a football players database that i query with joins, set operations, aggregates and subqueries. new labs get added as the module goes on.
 
-## what each lab covers
+## <img src="assets/breakdown.png" width="24" alt=""> structure
 
-| lab | what's in it |
-|-----|--------------|
-| 2 | designing a food delivery app (`FoodApp`): customers, restaurants, menu items, orders and order items, with primary and foreign keys. the diagram i drew is in the folder too, plus a screenshot from DBeaver |
-| 3 | building a football database (clubs, players, player attributes, player contracts) and adding a column with a default value and a `CHECK` constraint using `ALTER TABLE` |
-| 4 | joining tables with `JOIN ... USING`, sorting with `ORDER BY`, top 10 lists with `LIMIT`, and filtering with `WHERE` |
-| 5 | set operations: `UNION`, `INTERSECT` and `EXCEPT`, e.g. players with no contract, or players under 20 who do have one |
+each lab is a single `.sql` file in its own folder, like `lab5/lab5.sql`. lab 2 also has the diagram i drew and a screenshot from DBeaver.
 
-## running the scripts
+## <img src="assets/gears.png" width="24" alt=""> running the scripts
 
-each lab is a single `.sql` file in its own folder. open one in pgAdmin or DBeaver and run it, or use `psql`:
+open a script in pgAdmin or DBeaver and run it, or use `psql`:
 
 ```bash
 psql -d your_database -f lab5/lab5.sql
@@ -21,14 +16,14 @@ psql -d your_database -f lab5/lab5.sql
 
 a couple of things to know first:
 
-**lab 2** puts its tables in a schema called `FoodApp`, which the script doesn't create, so run `CREATE SCHEMA "FoodApp";` before it.<br/>
-**labs 3 to 5** start with `DROP TABLE IF EXISTS`, so running one will wipe the tables and anything loaded into them. the repo only has the table definitions and queries, not the player data, so the `SELECT` queries return rows only once the data has been loaded back in.
+- **lab 2** puts its tables in a schema called `FoodApp`, which the script doesn't create, so run `CREATE SCHEMA "FoodApp";` before it.
+- **labs 3 to 5** start with `DROP TABLE IF EXISTS`, so running one will wipe the tables and anything loaded into them. the repo only has the table definitions and queries, not the player data, so the `SELECT` queries return rows only once the data has been loaded back in.
+- **lab 8** only has queries. it expects the football tables from lab 5 to exist and have data loaded.
 
-## folders
+## <img src="assets/tools.png" width="24" alt=""> tools
 
-```
-lab2/   lab2.sql, the diagram + a DBeaver screenshot
-lab3/   lab3.sql
-lab4/   lab4.sql
-lab5/   lab5.sql
-```
+PostgreSQL, pgAdmin, DBeaver
+
+## <img src="assets/heart.png" width="24" alt=""> credits
+
+feel free to use or learn from any of this code. if you do, a link back to this repo or a mention of [@nady-lab](https://github.com/nady-lab) would be really appreciated!
